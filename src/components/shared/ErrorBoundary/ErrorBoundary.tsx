@@ -83,7 +83,7 @@ export class ErrorBoundary extends Component<Props, State> {
             {errorName && <strong>{errorName}: </strong>}
             {errorMessage}
           </p>
-          {process.env.NODE_ENV === 'development' && this.state.error?.stack && (
+          {import.meta.env.MODE === 'development' && this.state.error?.stack && (
             <details style={{ 
               marginBottom: '1rem', 
               padding: '1rem', 
