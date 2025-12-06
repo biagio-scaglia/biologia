@@ -43,7 +43,9 @@ jobs:
             rm public/CNAME
             echo "Removed CNAME from public"
           fi
-          echo "Ensured no CNAME files in build"
+          # Ensure .nojekyll exists for GitHub Pages
+          touch dist/.nojekyll
+          echo "Ensured no CNAME files in build and added .nojekyll"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
