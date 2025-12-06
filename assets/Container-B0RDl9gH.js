@@ -1,0 +1,1 @@
+import{j as e}from"./index-CVpeuB_E.js";const a=({children:n,maxWidth:o="lg",className:s=""})=>{const t=["container",`container--${o}`,s].filter(Boolean).join(" ");return e.jsx("div",{className:t,children:n})};export{a as C};
