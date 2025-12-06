@@ -51,8 +51,11 @@ const AnimatedRoutes: React.FC = () => {
 
 // App content that uses context
 const AppContent: React.FC = () => {
+  // Basename per GitHub Pages
+  const basename = import.meta.env.BASE_URL || '/biologia/';
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="app">
         <BiologyBackground intensity="low" />
         <Header />
