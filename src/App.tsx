@@ -51,8 +51,8 @@ const AnimatedRoutes: React.FC = () => {
 
 // App content that uses context
 const AppContent: React.FC = () => {
-  // Basename per GitHub Pages
-  const basename = import.meta.env.BASE_URL || '/biologia/';
+  // Basename per Vercel (usa BASE_URL se definito, altrimenti root)
+  const basename = import.meta.env.BASE_URL || '/';
   
   return (
     <BrowserRouter basename={basename}>
