@@ -58,7 +58,7 @@ export const Typewriter: React.FC<TypewriterProps> = ({
         return;
       }
 
-      // Type out text character by character
+      // Type out text character by character (optimized)
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => {
           if (prevIndex < text.length) {

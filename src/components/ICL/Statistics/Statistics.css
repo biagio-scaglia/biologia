@@ -143,6 +143,13 @@
   min-height: 400px;
 }
 
+/* Hide chart container on mobile */
+@media (max-width: 767px) {
+  .statistics-chart-container.statistics-chart-desktop {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .statistics-chart-container {
     min-height: 500px;
@@ -669,52 +676,13 @@
     padding: var(--spacing-3);
   }
 
-  /* Mobile chart adjustments */
+  /* Hide bar chart on mobile - labels are too small */
   .statistics-bar-chart {
-    min-width: 600px;
-    height: 500px !important;
+    display: none !important;
   }
 
   .statistics-pie-chart {
     height: 340px !important;
-  }
-
-  /* X-axis labels on mobile - make them more visible */
-  .statistics-bar-chart .recharts-xAxis {
-    height: 180px !important;
-  }
-
-  .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick {
-    font-size: 11px !important;
-  }
-
-  .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick text {
-    transform: translate(-5px, 20px) !important;
-    text-anchor: end !important;
-    fill: var(--color-text) !important;
-    font-weight: 500 !important;
-  }
-
-  /* Ensure labels are visible with proper spacing */
-  .statistics-bar-chart .recharts-wrapper {
-    overflow: visible !important;
-  }
-
-  .statistics-bar-chart .recharts-surface {
-    overflow: visible !important;
-  }
-  
-  .statistics-bar-chart .recharts-cartesian-axis {
-    overflow: visible !important;
-  }
-  
-  .statistics-bar-chart .recharts-xAxis {
-    overflow: visible !important;
-  }
-  
-  .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick-value {
-    overflow: visible !important;
-    text-overflow: clip !important;
   }
 }
 

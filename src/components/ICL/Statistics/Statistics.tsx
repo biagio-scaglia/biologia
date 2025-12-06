@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui';
 import { Typewriter } from '@/components/shared/Typewriter';
 import { Map } from '@/components/shared';
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LabelList } from 'recharts';
+import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import statisticsData from '@/assets/data/lch/statistics.json';
 import './Statistics.css';
 
@@ -141,10 +141,10 @@ export const Statistics: React.FC = () => {
           className="statistics-card-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
         >
           <Card title="Coinvolgimento degli Organi" variant="elevated">
-            <div className="statistics-chart-container">
+            <div className="statistics-chart-container statistics-chart-desktop">
               <ResponsiveContainer width="100%" height={600} className="statistics-bar-chart">
                 <BarChart 
                   data={organData}
@@ -188,7 +188,7 @@ export const Statistics: React.FC = () => {
                     name="Percentuale di coinvolgimento"
                     radius={[12, 12, 0, 0]}
                     animationBegin={0}
-                    animationDuration={600}
+                    animationDuration={400}
                     animationEasing="ease-out"
                     strokeWidth={2}
                     isAnimationActive={true}
@@ -216,7 +216,7 @@ export const Statistics: React.FC = () => {
           className="statistics-card-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
         >
           <Card title="Prognosi" variant="elevated">
             <div className="statistics-prognosis">
@@ -322,7 +322,7 @@ export const Statistics: React.FC = () => {
           className="statistics-card-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
         >
           <Card title="Recidive" variant="elevated">
             <div className="statistics-recurrence">
@@ -350,7 +350,7 @@ export const Statistics: React.FC = () => {
           className="statistics-card-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <Card title="Distribuzione Geografica" variant="elevated">
             <Map />
