@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Istiocitosi a Cellule di Langerhans - Guida Educativa</title>
+    <meta name="description" content="Guida educativa completa sull'Istiocitosi a Cellule di Langerhans (ICL): cellule coinvolte, mutazioni genetiche, sintomi, diagnostica, trattamenti e statistiche." />
+    <script>
+      // Cross-browser compatibility and feature detection
+      (function() {
+        'use strict';
+        
+        // Feature detection
+        const supportsBackdropFilter = CSS.supports('backdrop-filter', 'blur(10px)') || 
+                                       CSS.supports('-webkit-backdrop-filter', 'blur(10px)');
+        const supportsCSSVariables = CSS.supports('color', 'var(--test)');
+        const supportsClamp = CSS.supports('width', 'clamp(1px, 2px, 3px)');
+        
+        // Add feature classes to html element
+        if (!supportsBackdropFilter) {
+          document.documentElement.classList.add('no-backdrop-filter');
+        }
+        if (!supportsCSSVariables) {
+          document.documentElement.classList.add('no-css-variables');
+        }
+        if (!supportsClamp) {
+          document.documentElement.classList.add('no-clamp');
+        }
+        
+        // Browser detection for specific fixes
+        const ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('firefox') > -1) {
+          document.documentElement.classList.add('firefox');
+        }
+        if (ua.indexOf('safari') > -1 && ua.indexOf('chrome') === -1) {
+          document.documentElement.classList.add('safari');
+        }
+        if (ua.indexOf('opera') > -1 || ua.indexOf('opr') > -1) {
+          document.documentElement.classList.add('opera');
+        }
+        if (ua.indexOf('edg') > -1) {
+          document.documentElement.classList.add('edge');
+        }
+        
+        // Clean up corrupted localStorage entries and force light theme
+        try {
+          try {
+            localStorage.removeItem('app-theme');
+          } catch (e) {
+            // Ignora errori nella rimozione
+          }
+          
+          // Force light theme always
+          document.documentElement.setAttribute('data-theme', 'light');
+        } catch (e) {
+          // Fallback
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <style>
+      /* Prevent white flash on load */
+      html, body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      body {
+        background-color: #ffffff;
+        color: #1e293b;
+        transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+      }
+      [data-theme='dark'] body {
+        background-color: #0f172a;
+        color: #f1f5f9;
+      }
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

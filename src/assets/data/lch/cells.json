@@ -1,0 +1,47 @@
+{
+  "title": "Cellule Coinvolte",
+  "subtitle": "Caratteristiche delle cellule di Langerhans nell'ICL",
+  "cells": [
+    {
+      "id": "cd1a",
+      "name": "CD1a",
+      "fullName": "Cluster of Differentiation 1a",
+      "description": "Marcatore di superficie caratteristico delle cellule di Langerhans. Le cellule ICL sono tipicamente CD1a-positive, il che le distingue da altre cellule dendritiche.",
+      "function": "Presentazione di antigeni lipidici alle cellule T",
+      "significance": "Marcatore diagnostico fondamentale per l'identificazione dell'ICL",
+      "location": "Superficie cellulare"
+    },
+    {
+      "id": "cd207",
+      "name": "CD207",
+      "fullName": "Langerin",
+      "description": "Proteina transmembrana espressa specificamente dalle cellule di Langerhans. CD207 (langerin) è un marcatore altamente specifico per queste cellule.",
+      "function": "Formazione di granuli di Birbeck, strutture caratteristiche delle cellule di Langerhans",
+      "significance": "Marcatore diagnostico altamente specifico, spesso più sensibile di CD1a",
+      "location": "Superficie cellulare e granuli di Birbeck"
+    },
+    {
+      "id": "dendritic",
+      "name": "Cellule Dendritiche",
+      "fullName": "Dendritic Cells",
+      "description": "Le cellule di Langerhans sono un tipo specializzato di cellule dendritiche presenti principalmente nell'epidermide e nelle mucose.",
+      "function": "Sorveglianza immunitaria, cattura e presentazione di antigeni",
+      "significance": "Le cellule ICL derivano da precursori di cellule dendritiche che subiscono mutazioni",
+      "location": "Epidermide, mucose, linfonodi"
+    },
+    {
+      "id": "langerhans",
+      "name": "Cellule di Langerhans",
+      "fullName": "Langerhans Cells",
+      "description": "Cellule immunitarie specializzate che fungono da sentinelle del sistema immunitario nella pelle. Nell'ICL, queste cellule proliferano in modo anomalo.",
+      "function": "Rilevamento di patogeni e attivazione della risposta immunitaria",
+      "significance": "Le cellule ICL mantengono alcune caratteristiche delle cellule di Langerhans normali ma con comportamento patologico",
+      "location": "Principalmente epidermide, ma nell'ICL possono infiltrarsi in vari organi"
+    }
+  ],
+  "pathology": {
+    "description": "Nell'ICL, le cellule anomale mostrano caratteristiche morfologiche simili alle cellule di Langerhans normali, ma con comportamento proliferativo alterato dovuto a mutazioni genetiche.",
+    "granules": "I granuli di Birbeck sono strutture caratteristiche a forma di tennis racket visibili al microscopio elettronico nelle cellule di Langerhans normali e in molte cellule ICL."
+  }
+}
+

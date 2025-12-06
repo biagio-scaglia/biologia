@@ -1,0 +1,259 @@
+.diagnostics {
+  padding: var(--spacing-2xl) 0;
+}
+
+.diagnostics-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.diagnostics-title {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.diagnostics-subtitle {
+  font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xl));
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.diagnostics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.diagnostics-card {
+  height: 100%;
+}
+
+.diagnostics-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.diagnostics-icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.diagnostics-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.diagnostics-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.diagnostics-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.diagnostics-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.diagnostics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.diagnostics-item {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.diagnostics-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.diagnostics-item--definitive {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.diagnostics-markers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.diagnostics-marker-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.diagnostics-marker-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.diagnostics-marker-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.diagnostics-marker-tag {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.diagnostics-marker-tag--required {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.diagnostics-techniques {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.diagnostics-technique {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-3);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.diagnostics-technique-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.diagnostics-technique-use,
+.diagnostics-technique-findings {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: var(--spacing-xs) 0;
+}
+
+.diagnostics-tests {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.diagnostics-test {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-3);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.diagnostics-test-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.diagnostics-test-significance {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: var(--spacing-sm) 0 0 0;
+}
+
+.diagnostics-significance {
+  background: var(--color-info-light);
+  padding: var(--spacing-md);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--color-info);
+  margin-top: var(--spacing-md);
+}
+
+.diagnostics-significance-text {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: 500;
+}
+
+.diagnostics-criteria {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.diagnostics-criteria-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.diagnostics-criteria-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.diagnostics-criteria-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .diagnostics-title {
+    font-size: 2rem;
+  }
+
+  .diagnostics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostics-criteria-content {
+    grid-template-columns: 1fr;
+  }
+}
+

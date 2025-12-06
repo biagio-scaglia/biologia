@@ -1,0 +1,38 @@
+/* ============================================
+   TYPEWRITER EFFECT
+   ============================================ */
+.typewriter {
+  display: inline-block;
+  position: relative;
+}
+
+.typewriter-text {
+  display: inline;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-normal);
+  animation: blink 1s infinite;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor {
+    animation: none;
+    opacity: 0;
+  }
+}
+

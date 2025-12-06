@@ -1,0 +1,24 @@
+{
+  "title": "Fonti e Riferimenti",
+  "subtitle": "Documenti e risorse utilizzate",
+  "sources": [
+    {
+      "type": "Documento Scientifico",
+      "title": "Istiocitosi a cellule di Langerhans nei bambini",
+      "format": "PDF",
+      "location": "docs/(ICL) Istiocitosi a cellule di Langerhans nei bambini.pdf",
+      "description": "Documento principale contenente informazioni dettagliate sull'ICL in età pediatrica"
+    },
+    {
+      "type": "Documento Scientifico",
+      "title": "Biologia - Cellule di Langerhans",
+      "format": "PDF",
+      "location": "docs/biologia.pdf",
+      "description": "Documento contenente informazioni biologiche sulle cellule di Langerhans"
+    }
+  ],
+  "disclaimer": "Le informazioni presentate in questo progetto sono basate esclusivamente sui documenti PDF forniti. Non sono state aggiunte informazioni mediche non presenti nei documenti originali. Questo progetto è a scopo educativo e informativo.",
+  "medicalDisclaimer": "Le informazioni mediche fornite non sostituiscono la consulenza medica professionale. Per diagnosi e trattamento, consultare sempre un medico qualificato.",
+  "note": "Tutti i contenuti sono stati estratti e riscritti dai PDF forniti, mantenendo la precisione scientifica e la chiarezza educativa."
+}
+

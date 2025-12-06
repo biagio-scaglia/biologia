@@ -1,0 +1,109 @@
+{
+  "title": "Statistiche ed Epidemiologia",
+  "subtitle": "Dati epidemiologici sull'ICL",
+  "epidemiology": {
+    "incidence": {
+      "value": "1-2",
+      "unit": "casi per 100.000 bambini all'anno",
+      "description": "L'ICL è una malattia rara, con un'incidenza stimata di 1-2 casi per 100.000 bambini all'anno."
+    },
+    "ageDistribution": {
+      "peak": "1-3 anni",
+      "range": "Dalla nascita all'età adulta",
+      "pediatric": "Circa 80% dei casi si verifica in età pediatrica",
+      "adult": "Circa 20% dei casi si verifica negli adulti",
+      "description": "Il picco di incidenza è tra 1-3 anni, ma la malattia può manifestarsi a qualsiasi età."
+    },
+    "gender": {
+      "male": "Leggermente più comune",
+      "ratio": "Circa 1.2:1 (maschi:femmine)",
+      "description": "L'ICL è leggermente più comune nei maschi rispetto alle femmine."
+    },
+    "mortality": {
+      "overall": "Variabile, generalmente bassa per forme unifocali",
+      "unifocal": "<5%",
+      "multifocal": "5-15%",
+      "systemic": "15-40% (dipende dagli organi coinvolti)",
+      "riskFactors": [
+        "Coinvolgimento del midollo osseo",
+        "Coinvolgimento epatico",
+        "Coinvolgimento polmonare (negli adulti)",
+        "Età <2 anni con malattia sistemica",
+        "Risposta scarsa al trattamento iniziale"
+      ],
+      "description": "La mortalità varia significativamente in base all'estensione della malattia e agli organi coinvolti."
+    }
+  },
+  "organInvolvement": {
+    "bone": {
+      "percentage": 80,
+      "description": "Le lesioni ossee sono le manifestazioni più comuni"
+    },
+    "skin": {
+      "percentage": 30,
+      "description": "Coinvolgimento cutaneo frequente"
+    },
+    "lymph": {
+      "percentage": 25,
+      "description": "Coinvolgimento linfonodale comune"
+    },
+    "lung": {
+      "percentage": 20,
+      "description": "Più comune negli adulti fumatori"
+    },
+    "liver": {
+      "percentage": 15,
+      "description": "Associato a prognosi peggiore"
+    },
+    "spleen": {
+      "percentage": 12,
+      "description": "Spesso associato a coinvolgimento epatico"
+    },
+    "pituitary": {
+      "percentage": 12,
+      "description": "Diabete insipido come manifestazione più comune"
+    },
+    "boneMarrow": {
+      "percentage": 8,
+      "description": "Associato a prognosi peggiore"
+    }
+  },
+  "prognosis": {
+    "favorable": {
+      "factors": [
+        "ICL unifocale",
+        "Età >2 anni",
+        "Assenza di coinvolgimento di organi a rischio",
+        "Risposta precoce al trattamento"
+      ],
+      "survival": ">95% a 5 anni"
+    },
+    "intermediate": {
+      "factors": [
+        "ICL multifocale senza organi a rischio",
+        "Risposta parziale al trattamento"
+      ],
+      "survival": "80-90% a 5 anni"
+    },
+    "poor": {
+      "factors": [
+        "Coinvolgimento del midollo osseo",
+        "Coinvolgimento epatico",
+        "Coinvolgimento polmonare (adulti)",
+        "Età <2 anni con malattia sistemica",
+        "Malattia refrattaria"
+      ],
+      "survival": "40-60% a 5 anni"
+    }
+  },
+  "recurrence": {
+    "rate": "Circa 20-30% dei casi",
+    "timing": "Generalmente entro 2-3 anni dalla diagnosi iniziale",
+    "riskFactors": [
+      "Malattia multifocale iniziale",
+      "Coinvolgimento di organi multipli",
+      "Risposta incompleta al trattamento iniziale"
+    ]
+  }
+}
+

@@ -1,0 +1,244 @@
+.treatments {
+  padding: var(--spacing-2xl) 0;
+}
+
+.treatments-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.treatments-title {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.treatments-subtitle {
+  font-size: clamp(var(--font-size-base), 3vw, var(--font-size-xl));
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.treatments-card {
+  height: 100%;
+}
+
+.treatments-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.treatments-icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.treatments-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.treatments-indication {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  background: var(--color-primary-light);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 0.375rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.treatments-indication-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.treatments-indication-value {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.treatments-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.treatments-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.treatments-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.treatments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.treatments-item {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.treatments-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.treatments-item--side-effect {
+  color: var(--color-danger);
+}
+
+.treatments-item--side-effect::before {
+  color: var(--color-danger);
+}
+
+.treatments-regimens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.treatments-regimen {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-3);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.treatments-regimen-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.treatments-regimen-description {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.treatments-regimen-duration,
+.treatments-regimen-admin {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: var(--spacing-xs) 0;
+}
+
+.treatments-dose,
+.treatments-mechanism,
+.treatments-efficacy {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.treatments-monitoring,
+.treatments-outcomes {
+  background: var(--color-info-light);
+  padding: var(--spacing-md);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--color-info);
+  margin-top: var(--spacing-md);
+}
+
+.treatments-monitoring-text,
+.treatments-outcomes-text {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.treatments-strategy {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.treatments-strategy-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.treatments-strategy-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.treatments-strategy-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.treatments-strategy-text {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .treatments-title {
+    font-size: 2rem;
+  }
+
+  .treatments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treatments-strategy-content {
+    grid-template-columns: 1fr;
+  }
+}
+

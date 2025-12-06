@@ -1,0 +1,2 @@
+export { BiologyBackground } from './BiologyBackground';
+

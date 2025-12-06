@@ -1,0 +1,154 @@
+{
+  "title": "Diagnostica",
+  "subtitle": "Metodi di diagnosi dell'ICL",
+  "methods": [
+    {
+      "id": "biopsy",
+      "name": "Biopsia",
+      "description": "La biopsia del tessuto coinvolto è il metodo diagnostico definitivo per l'ICL.",
+      "procedure": "Prelievo di un campione di tessuto dalla lesione sospetta",
+      "analysis": [
+        "Esame istologico",
+        "Immunoistochimica per CD1a",
+        "Immunoistochimica per CD207 (langerin)",
+        "Microscopia elettronica per granuli di Birbeck"
+      ],
+      "markers": {
+        "required": [
+          "CD1a positivo",
+          "CD207 (langerin) positivo"
+        ],
+        "additional": [
+          "S100 positivo",
+          "CD68 positivo",
+          "Granuli di Birbeck (microscopia elettronica)"
+        ]
+      },
+      "significance": "La presenza di cellule CD1a-positive e CD207-positive è diagnostica per l'ICL"
+    },
+    {
+      "id": "imaging",
+      "name": "Imaging",
+      "description": "Le tecniche di imaging sono essenziali per valutare l'estensione della malattia e monitorare la risposta al trattamento.",
+      "techniques": [
+        {
+          "name": "Radiografia",
+          "use": "Valutazione delle lesioni ossee, screening iniziale",
+          "findings": "Lesioni litiche, distruzione ossea, fratture patologiche"
+        },
+        {
+          "name": "Tomografia Computerizzata (TC)",
+          "use": "Valutazione dettagliata delle lesioni ossee e dei tessuti molli",
+          "findings": "Estensione delle lesioni, coinvolgimento degli organi interni"
+        },
+        {
+          "name": "Risonanza Magnetica (RM)",
+          "use": "Valutazione del coinvolgimento del sistema nervoso centrale, ipofisi, midollo osseo",
+          "findings": "Lesioni del sistema nervoso centrale, coinvolgimento ipofisario, infiltrazione del midollo osseo"
+        },
+        {
+          "name": "Scintigrafia ossea",
+          "use": "Ricerca di lesioni ossee multiple",
+          "findings": "Aree di aumentato uptake nelle lesioni attive"
+        },
+        {
+          "name": "PET/TC",
+          "use": "Valutazione dell'attività metabolica della malattia, staging, monitoraggio della risposta",
+          "findings": "Aree di aumentato metabolismo glucidico nelle lesioni attive"
+        }
+      ]
+    },
+    {
+      "id": "laboratory",
+      "name": "Esami di Laboratorio",
+      "description": "Gli esami di laboratorio supportano la diagnosi e valutano la funzione degli organi coinvolti.",
+      "tests": [
+        {
+          "category": "Emocromo",
+          "tests": [
+            "Emoglobina (per anemia)",
+            "Conta leucocitaria (per leucopenia)",
+            "Piastrine (per trombocitopenia)"
+          ],
+          "significance": "Valuta il coinvolgimento del midollo osseo"
+        },
+        {
+          "category": "Funzionalità epatica",
+          "tests": [
+            "AST, ALT",
+            "Bilirubina",
+            "Albumina",
+            "Tempo di protrombina"
+          ],
+          "significance": "Valuta il coinvolgimento epatico"
+        },
+        {
+          "category": "Funzionalità renale",
+          "tests": [
+            "Creatinina",
+            "Azotemia",
+            "Elettroliti"
+          ],
+          "significance": "Valuta la funzione renale, importante nel diabete insipido"
+        },
+        {
+          "category": "Marker infiammatori",
+          "tests": [
+            "VES",
+            "PCR",
+            "Ferritina"
+          ],
+          "significance": "Valuta l'attività infiammatoria della malattia"
+        }
+      ]
+    },
+    {
+      "id": "genetic",
+      "name": "Analisi Genetica",
+      "description": "L'analisi genetica può identificare mutazioni caratteristiche e guidare le decisioni terapeutiche.",
+      "tests": [
+        {
+          "name": "Sequenziamento BRAF",
+          "purpose": "Identificare la mutazione BRAF V600E",
+          "significance": "Presente in circa 50-60% dei casi, bersaglio per terapia mirata"
+        },
+        {
+          "name": "Sequenziamento MAP2K1",
+          "purpose": "Identificare mutazioni in MAP2K1",
+          "significance": "Presente in circa 15-25% dei casi"
+        },
+        {
+          "name": "Pannello NGS",
+          "purpose": "Sequenziamento di nuova generazione per identificare mutazioni multiple",
+          "significance": "Identifica mutazioni rare (RAS, ARAF) e guida la terapia personalizzata"
+        }
+      ],
+      "significance": "Le mutazioni identificate possono guidare la scelta di terapie mirate come Vemurafenib"
+    },
+    {
+      "id": "endocrine",
+      "name": "Valutazione Endocrinologica",
+      "description": "Essenziale quando si sospetta coinvolgimento ipofisario.",
+      "tests": [
+        "Test della sete (per diabete insipido)",
+        "Dosaggio ormonale (GH, TSH, ACTH, FSH, LH)",
+        "Test di stimolazione ormonale",
+        "Risonanza magnetica dell'ipofisi"
+      ],
+      "significance": "Il diabete insipido è una complicanza comune e spesso permanente"
+    }
+  ],
+  "diagnosticCriteria": {
+    "definitive": [
+      "Presenza di cellule CD1a-positive e CD207-positive alla biopsia",
+      "Caratteristiche istologiche compatibili",
+      "Granuli di Birbeck alla microscopia elettronica (quando disponibile)"
+    ],
+    "supportive": [
+      "Imaging compatibile",
+      "Mutazioni genetiche caratteristiche (BRAF V600E, MAP2K1)",
+      "Manifestazioni cliniche tipiche"
+    ]
+  }
+}
+

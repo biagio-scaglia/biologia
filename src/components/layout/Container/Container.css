@@ -1,0 +1,61 @@
+/* ============================================
+   CONTAINER - Mobile First with Fluid Spacing
+   ============================================ */
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(var(--spacing-4), 4vw, var(--spacing-6));
+}
+
+/* Small: 480px+ */
+@media (min-width: 480px) {
+  .container {
+    padding-inline: clamp(var(--spacing-5), 5vw, var(--spacing-8));
+  }
+}
+
+/* Medium: 768px+ */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: clamp(var(--spacing-6), 6vw, var(--spacing-10));
+  }
+}
+
+/* Large: 1024px+ */
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: clamp(var(--spacing-8), 8vw, var(--spacing-12));
+  }
+}
+
+/* Max Width Variants */
+.container--sm {
+  max-width: var(--container-sm);
+}
+
+.container--md {
+  max-width: var(--container-md);
+}
+
+.container--lg {
+  max-width: var(--container-lg);
+}
+
+.container--xl {
+  max-width: var(--container-xl);
+}
+
+.container--full {
+  max-width: 100%;
+}
+
+/* Large: 1024px+ */
+@media (min-width: 1024px) {
+  .container--lg {
+    max-width: var(--container-lg);
+  }
+  
+  .container--xl {
+    max-width: var(--container-xl);
+  }
+}

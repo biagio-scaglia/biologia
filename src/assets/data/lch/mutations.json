@@ -1,0 +1,70 @@
+{
+  "title": "Mutazioni Genetiche",
+  "subtitle": "Alterazioni molecolari nell'ICL",
+  "mutations": [
+    {
+      "id": "braf-v600",
+      "gene": "BRAF",
+      "mutation": "V600E",
+      "type": "Somatica",
+      "frequency": "Circa 50-60% dei casi di ICL",
+      "description": "La mutazione BRAF V600E è la più comune alterazione genetica nell'ICL. È una mutazione puntiforme che sostituisce la valina con acido glutammico alla posizione 600.",
+      "mechanism": "La mutazione attiva costitutivamente la proteina BRAF, portando a un'attivazione continua della via di segnalazione MAPK/ERK, che promuove la proliferazione cellulare.",
+      "significance": "Marcatore prognostico importante e bersaglio per terapie mirate",
+      "pathway": "MAPK/ERK pathway",
+      "therapeuticTarget": true,
+      "targetedTherapy": "Vemurafenib, Dabrafenib"
+    },
+    {
+      "id": "map2k1",
+      "gene": "MAP2K1",
+      "mutation": "Varie mutazioni",
+      "type": "Somatica",
+      "frequency": "Circa 15-25% dei casi",
+      "description": "Mutazioni nel gene MAP2K1 (MEK1) che codifica per una chinasi nella via di segnalazione MAPK.",
+      "mechanism": "Le mutazioni in MAP2K1 attivano la via MAPK/ERK a valle di BRAF, portando a effetti simili alla mutazione BRAF V600E.",
+      "significance": "Alternativa molecolare alla mutazione BRAF, spesso mutuamente esclusiva",
+      "pathway": "MAPK/ERK pathway",
+      "therapeuticTarget": true,
+      "targetedTherapy": "Trametinib, Cobimetinib"
+    },
+    {
+      "id": "ras",
+      "gene": "RAS",
+      "mutation": "Varie mutazioni (KRAS, NRAS, HRAS)",
+      "type": "Somatica",
+      "frequency": "Raro, <5% dei casi",
+      "description": "Mutazioni nei geni della famiglia RAS che attivano la via di segnalazione MAPK.",
+      "mechanism": "Le proteine RAS mutanti attivano costitutivamente la cascata MAPK/ERK, promuovendo la proliferazione.",
+      "significance": "Meccanismo alternativo di attivazione della via MAPK",
+      "pathway": "MAPK/ERK pathway",
+      "therapeuticTarget": false
+    },
+    {
+      "id": "araf",
+      "gene": "ARAF",
+      "mutation": "Varie mutazioni",
+      "type": "Somatica",
+      "frequency": "Molto raro, <2% dei casi",
+      "description": "Mutazioni nel gene ARAF, un membro della famiglia RAF di chinasi.",
+      "mechanism": "Simile a BRAF, attiva la via MAPK/ERK ma con efficacia generalmente minore.",
+      "significance": "Meccanismo raro di attivazione della via MAPK",
+      "pathway": "MAPK/ERK pathway",
+      "therapeuticTarget": false
+    }
+  ],
+  "pathway": {
+    "name": "Via di Segnalazione MAPK/ERK",
+    "description": "La maggior parte delle mutazioni nell'ICL convergono sull'attivazione della via di segnalazione MAPK/ERK, che regola la proliferazione, differenziazione e sopravvivenza cellulare.",
+    "components": [
+      "RAS → RAF (BRAF, ARAF) → MEK (MAP2K1) → ERK → Effetti sulla proliferazione"
+    ],
+    "consequence": "L'attivazione costitutiva di questa via porta a proliferazione incontrollata delle cellule di Langerhans, caratteristica dell'ICL."
+  },
+  "somaticMutations": {
+    "description": "Tutte le mutazioni nell'ICL sono somatiche, cioè acquisite durante la vita e non ereditate. Si verificano nelle cellule precursori delle cellule di Langerhans.",
+    "timing": "Le mutazioni probabilmente si verificano durante lo sviluppo embrionale o nella prima infanzia.",
+    "clonality": "Le cellule ICL derivano da un clone mutante, indicando un'origine monoclonale della malattia."
+  }
+}
+

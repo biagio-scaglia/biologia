@@ -1,0 +1,73 @@
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #a5f3fc;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(67%) sepia(23%) saturate(1000%) hue-rotate(140deg) brightness(95%) contrast(85%);
+  mix-blend-mode: multiply;
+}
+
+.map-marker {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.map-marker:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.map-marker-dot {
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.map-marker-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.map-marker-label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.map-marker:hover .map-marker-label {
+  opacity: 1;
+}
+

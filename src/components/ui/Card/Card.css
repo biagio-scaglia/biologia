@@ -1,0 +1,106 @@
+/* ============================================
+   CARD - Mobile First with Modern Design
+   ============================================ */
+.card {
+  background: var(--gradient-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--duration-base) var(--ease-smooth);
+  position: relative;
+}
+
+.card--default {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--gradient-card);
+}
+
+.card--outlined {
+  border: 2px solid;
+  border-image: var(--gradient-border) 1;
+  box-shadow: var(--shadow-xs);
+}
+
+.card--elevated {
+  border: none;
+  box-shadow: var(--shadow-md);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+}
+
+.card--glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.card--clickable {
+  cursor: pointer;
+}
+
+.card--clickable:hover {
+  transform: var(--translate-hover) var(--scale-hover);
+  box-shadow: var(--shadow-lg), var(--glow-primary);
+}
+
+.card--clickable:active {
+  transform: var(--translate-active) var(--scale-active);
+}
+
+.card--clickable:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  box-shadow: var(--shadow-lg), 0 0 0 4px var(--color-primary-lighter);
+}
+
+.card-header {
+  padding: clamp(var(--spacing-3), 1.2vw, var(--spacing-5)) clamp(var(--spacing-4), 1.5vw, var(--spacing-5));
+  border-bottom: 1px solid var(--color-border);
+  background: var(--gradient-subtle);
+}
+
+.card-title {
+  margin: 0;
+  font-size: clamp(var(--font-size-lg), 2vw, var(--font-size-xl));
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.card-subtitle {
+  margin: var(--spacing-1) 0 0 0;
+  font-size: clamp(var(--font-size-sm), 1.5vw, var(--font-size-base));
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+.card-body {
+  padding: clamp(var(--spacing-3), 1.5vw, var(--spacing-5));
+}
+
+.card-footer {
+  padding: clamp(var(--spacing-3), 1.2vw, var(--spacing-4)) clamp(var(--spacing-4), 1.5vw, var(--spacing-5));
+  border-top: 1px solid var(--color-border);
+  background: var(--gradient-subtle);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding-inline: var(--spacing-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding-inline: var(--spacing-6);
+  }
+}
+

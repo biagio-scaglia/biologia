@@ -1,0 +1,233 @@
+.prevention {
+  padding: var(--spacing-2xl) 0;
+}
+
+.prevention-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.prevention-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.prevention-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.prevention-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.prevention-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.prevention-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.prevention-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.prevention-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.prevention-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.prevention-item {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  padding-left: var(--spacing-md);
+  position: relative;
+}
+
+.prevention-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.prevention-item--investigation {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.prevention-smoking {
+  background: var(--color-warning-light);
+  padding: var(--spacing-md);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--color-warning);
+  margin-top: var(--spacing-md);
+}
+
+.prevention-smoking-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-warning);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.prevention-smoking-description {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.prevention-smoking-recommendation {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.prevention-research {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.prevention-research-item {
+  padding: var(--spacing-3);
+  background: var(--color-bg-secondary);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.prevention-research-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.prevention-research-description {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.prevention-research-focus {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.prevention-future-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.prevention-future-item {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.7;
+  padding: var(--spacing-3);
+  background: var(--color-primary-lighter);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.prevention-trials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.prevention-trials-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.prevention-trials-types,
+.prevention-trials-resources {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.prevention-trials-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.prevention-awareness {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.prevention-awareness-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.prevention-awareness-education {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.prevention-awareness-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .prevention-title {
+    font-size: 2rem;
+  }
+
+  .prevention-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

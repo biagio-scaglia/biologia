@@ -1,0 +1,83 @@
+{
+  "title": "Prevenzione e Ricerca",
+  "subtitle": "Prevenzione, ricerca e prospettive future",
+  "prevention": {
+    "description": "Non esiste attualmente un metodo di prevenzione per l'ICL, poiché le mutazioni sono somatiche e acquisite, non ereditarie.",
+    "factors": {
+      "known": [
+        "Le mutazioni sono somatiche (acquisite, non ereditate)",
+        "Non ci sono fattori ambientali noti che aumentino il rischio",
+        "Non è una malattia contagiosa"
+      ],
+      "underInvestigation": [
+        "Possibili fattori ambientali",
+        "Fattori immunologici",
+        "Predisposizione genetica (non ancora identificata)"
+      ]
+    },
+    "smoking": {
+      "description": "Il fumo è stato associato a un aumentato rischio di ICL polmonare negli adulti, ma non è un fattore causale per l'ICL in generale.",
+      "recommendation": "Evitare il fumo può ridurre il rischio di ICL polmonare negli adulti."
+    }
+  },
+  "research": {
+    "current": [
+      {
+        "area": "Terapie Mirate",
+        "description": "Sviluppo di nuovi inibitori della via MAPK per pazienti con diverse mutazioni",
+        "focus": "Inibitori di MEK, combinazioni di inibitori"
+      },
+      {
+        "area": "Immunoterapia",
+        "description": "Esplorazione di approcci immunoterapici per l'ICL",
+        "focus": "Terapie che modulano il sistema immunitario"
+      },
+      {
+        "area": "Biomarker",
+        "description": "Identificazione di biomarker per prognosi e monitoraggio della risposta",
+        "focus": "Marker sierici, imaging avanzato"
+      },
+      {
+        "area": "Meccanismi Patogenetici",
+        "description": "Comprensione approfondita dei meccanismi molecolari dell'ICL",
+        "focus": "Interazioni tra mutazioni e microambiente tumorale"
+      },
+      {
+        "area": "Terapie di Combinazione",
+        "description": "Ottimizzazione di regimi terapeutici combinati",
+        "focus": "Chemioterapia + terapia mirata, sequenze ottimali"
+      }
+    ],
+    "future": [
+      "Terapie personalizzate basate sul profilo genetico",
+      "Sviluppo di farmaci più selettivi e meno tossici",
+      "Miglioramento della prognosi per forme ad alto rischio",
+      "Prevenzione delle recidive",
+      "Trattamento delle complicanze a lungo termine (es. diabete insipido)"
+    ]
+  },
+  "clinicalTrials": {
+    "description": "I pazienti con ICL possono essere candidati per studi clinici, specialmente per malattia refrattaria o recidivante.",
+    "types": [
+      "Studi su terapie mirate",
+      "Studi su nuove combinazioni chemioterapiche",
+      "Studi su immunoterapia",
+      "Studi osservazionali per comprendere meglio la storia naturale della malattia"
+    ],
+    "resources": [
+      "Registri internazionali di ICL",
+      "Centri di riferimento specializzati",
+      "Reti di ricerca collaborativa"
+    ]
+  },
+  "awareness": {
+    "importance": "Aumentare la consapevolezza dell'ICL è importante per una diagnosi precoce e un trattamento appropriato.",
+    "education": [
+      "Formazione dei medici di base",
+      "Educazione dei pazienti e delle famiglie",
+      "Risorse online affidabili",
+      "Gruppi di supporto"
+    ]
+  }
+}
+

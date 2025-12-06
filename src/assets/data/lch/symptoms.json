@@ -1,0 +1,170 @@
+{
+  "title": "Sintomi e Organi Colpiti",
+  "subtitle": "Manifestazioni cliniche dell'ICL",
+  "organs": [
+    {
+      "id": "bone",
+      "name": "Osso",
+      "icon": "🦴",
+      "frequency": "Circa 80% dei casi",
+      "symptoms": [
+        "Dolore osseo localizzato",
+        "Gonfiore e tumefazione",
+        "Fratture patologiche",
+        "Lesioni litiche visibili alla radiografia"
+      ],
+      "commonLocations": [
+        "Cranio (più comune)",
+        "Femore",
+        "Omero",
+        "Coste",
+        "Colonna vertebrale",
+        "Pelvi"
+      ],
+      "description": "Le lesioni ossee sono le manifestazioni più comuni dell'ICL. Possono essere singole o multiple e spesso coinvolgono il cranio, causando lesioni litiche caratteristiche.",
+      "diagnosis": "Radiografia, TC, risonanza magnetica, biopsia ossea"
+    },
+    {
+      "id": "skin",
+      "name": "Pelle",
+      "icon": "🫱",
+      "frequency": "Circa 30-50% dei casi",
+      "symptoms": [
+        "Eruzioni cutanee",
+        "Papule e noduli",
+        "Lesioni seborroiche",
+        "Ulcerazioni",
+        "Eritema",
+        "Desquamazione"
+      ],
+      "commonLocations": [
+        "Cuoio capelluto",
+        "Ascelle",
+        "Inguine",
+        "Tronco",
+        "Area genitale"
+      ],
+      "description": "Le manifestazioni cutanee possono essere il primo segno della malattia. Le lesioni spesso assomigliano a dermatite seborroica o psoriasi.",
+      "diagnosis": "Esame clinico, biopsia cutanea con immunostochimica per CD1a e CD207"
+    },
+    {
+      "id": "lung",
+      "name": "Polmone",
+      "icon": "🫁",
+      "frequency": "Circa 20-30% dei casi (più comune negli adulti)",
+      "symptoms": [
+        "Tosse persistente",
+        "Dispnea (difficoltà respiratoria)",
+        "Dolore toracico",
+        "Pneumotorace",
+        "Insufficienza respiratoria"
+      ],
+      "commonLocations": [
+        "Campi polmonari superiori e medi",
+        "Interstizio polmonare"
+      ],
+      "description": "Il coinvolgimento polmonare è più frequente negli adulti fumatori. Può portare a fibrosi polmonare e insufficienza respiratoria cronica.",
+      "diagnosis": "Radiografia del torace, TC torace, biopsia polmonare, lavaggio broncoalveolare"
+    },
+    {
+      "id": "liver",
+      "name": "Fegato",
+      "icon": "🫀",
+      "frequency": "Circa 15-20% dei casi",
+      "symptoms": [
+        "Epatomegalia (ingrossamento del fegato)",
+        "Ittero",
+        "Elevazione degli enzimi epatici",
+        "Insufficienza epatica",
+        "Ipertensione portale"
+      ],
+      "commonLocations": [
+        "Parenchima epatico",
+        "Dotti biliari"
+      ],
+      "description": "Il coinvolgimento epatico può essere grave e associato a prognosi peggiore. Può portare a cirrosi e insufficienza epatica.",
+      "diagnosis": "Ecografia, TC addome, biopsia epatica, test di funzionalità epatica"
+    },
+    {
+      "id": "spleen",
+      "name": "Milza",
+      "icon": "🔴",
+      "frequency": "Circa 10-15% dei casi",
+      "symptoms": [
+        "Splenomegalia (ingrossamento della milza)",
+        "Pancitopenia (riduzione delle cellule del sangue)",
+        "Ipersplenismo"
+      ],
+      "commonLocations": [
+        "Parenchima splenico"
+      ],
+      "description": "Il coinvolgimento splenico spesso si associa a coinvolgimento epatico e può contribuire alla pancitopenia.",
+      "diagnosis": "Ecografia, TC addome, biopsia splenica"
+    },
+    {
+      "id": "lymph",
+      "name": "Linfonodi",
+      "icon": "⚪",
+      "frequency": "Circa 20-30% dei casi",
+      "symptoms": [
+        "Linfoadenopatia (ingrossamento dei linfonodi)",
+        "Linfonodi palpabili"
+      ],
+      "commonLocations": [
+        "Cervicali",
+        "Ascellari",
+        "Inguinali",
+        "Mediastinici",
+        "Addominali"
+      ],
+      "description": "Il coinvolgimento linfonodale può essere localizzato o generalizzato.",
+      "diagnosis": "Esame clinico, ecografia, TC, biopsia linfonodale"
+    },
+    {
+      "id": "pituitary",
+      "name": "Ipofisi",
+      "icon": "🧠",
+      "frequency": "Circa 10-15% dei casi",
+      "symptoms": [
+        "Diabete insipido (sete eccessiva, minzione frequente)",
+        "Deficit di ormone della crescita",
+        "Ipogonadismo",
+        "Ipotiroidismo",
+        "Deficit di ACTH"
+      ],
+      "commonLocations": [
+        "Ipofisi posteriore (più comune)",
+        "Ipofisi anteriore"
+      ],
+      "description": "Il coinvolgimento ipofisario può causare disfunzioni endocrine permanenti, con il diabete insipido come manifestazione più comune.",
+      "diagnosis": "Risonanza magnetica dell'ipofisi, test endocrinologici, test della sete"
+    },
+    {
+      "id": "bone-marrow",
+      "name": "Midollo Osseo",
+      "icon": "🩸",
+      "frequency": "Circa 5-10% dei casi",
+      "symptoms": [
+        "Citopenia (riduzione delle cellule del sangue)",
+        "Anemia",
+        "Leucopenia",
+        "Trombocitopenia",
+        "Infezioni ricorrenti",
+        "Sanguinamenti"
+      ],
+      "commonLocations": [
+        "Midollo osseo ematopoietico"
+      ],
+      "description": "Il coinvolgimento del midollo osseo è associato a prognosi peggiore e richiede trattamento aggressivo.",
+      "diagnosis": "Aspirato midollare, biopsia del midollo osseo, emocromo completo"
+    }
+  ],
+  "systemicSymptoms": [
+    "Febbre",
+    "Perdita di peso",
+    "Malessere generale",
+    "Affaticamento",
+    "Ritardo di crescita (nei bambini)"
+  ]
+}
+

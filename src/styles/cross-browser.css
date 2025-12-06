@@ -1,0 +1,235 @@
+/* ============================================
+   CROSS-BROWSER COMPATIBILITY FIXES
+   Support for Firefox, Safari, Opera, Edge
+   ============================================ */
+
+/* ============================================
+   FIREFOX SPECIFIC FIXES
+   ============================================ */
+.firefox {
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-medium) var(--color-bg-secondary);
+}
+
+.firefox * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-medium) var(--color-bg-secondary);
+}
+
+/* Firefox backdrop-filter fallback */
+.firefox .header,
+.firefox .glass,
+.firefox .glass-strong,
+.firefox .glass-light {
+  background: var(--glass-bg-strong);
+}
+
+/* Firefox gradient text fallback */
+.firefox .gradient-text {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   SAFARI SPECIFIC FIXES
+   ============================================ */
+.safari {
+  /* Safari specific font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safari backdrop-filter support */
+.safari .header,
+.safari .glass,
+.safari .glass-strong,
+.safari .glass-light {
+  -webkit-backdrop-filter: var(--glass-backdrop);
+}
+
+.safari .header {
+  -webkit-backdrop-filter: var(--glass-backdrop);
+}
+
+.safari .glass-strong {
+  -webkit-backdrop-filter: var(--glass-backdrop-strong);
+}
+
+/* Safari mobile viewport fixes */
+@supports (-webkit-touch-callout: none) {
+  .safari body {
+    /* Fix for Safari mobile viewport */
+    min-height: -webkit-fill-available;
+  }
+  
+  .safari #root {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* ============================================
+   OPERA SPECIFIC FIXES
+   ============================================ */
+.opera {
+  /* Opera uses Blink engine (same as Chrome), but add specific fixes if needed */
+}
+
+/* ============================================
+   EDGE SPECIFIC FIXES
+   ============================================ */
+.edge {
+  /* Edge uses Blink engine (same as Chrome), but add specific fixes if needed */
+}
+
+/* Legacy Edge (pre-Chromium) support */
+@supports (-ms-ime-align: auto) {
+  .edge {
+    /* Legacy Edge specific fixes */
+  }
+}
+
+/* ============================================
+   BROWSER LEGACY SUPPORT
+   ============================================ */
+
+/* Fallback for browsers without CSS Variables */
+.no-css-variables {
+  /* These styles would need to be manually defined */
+  /* For now, we rely on CSS Variables with fallback values */
+}
+
+/* Fallback for browsers without backdrop-filter */
+.no-backdrop-filter .header,
+.no-backdrop-filter .glass,
+.no-backdrop-filter .glass-strong,
+.no-backdrop-filter .glass-light {
+  background: var(--glass-bg-strong);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Fallback for browsers without clamp() */
+.no-clamp h1 {
+  font-size: 2.5rem;
+}
+
+.no-clamp h2 {
+  font-size: 2rem;
+}
+
+.no-clamp h3 {
+  font-size: 1.75rem;
+}
+
+.no-clamp h4 {
+  font-size: 1.5rem;
+}
+
+.no-clamp h5 {
+  font-size: 1.25rem;
+}
+
+.no-clamp h6 {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .no-clamp h1 {
+    font-size: 3rem;
+  }
+  
+  .no-clamp h2 {
+    font-size: 2.5rem;
+  }
+  
+  .no-clamp h3 {
+    font-size: 2rem;
+  }
+}
+
+/* ============================================
+   MOBILE BROWSER FIXES
+   ============================================ */
+
+/* iOS Safari specific */
+@supports (-webkit-touch-callout: none) {
+  /* Prevent iOS Safari bounce effect on scroll */
+  body {
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for iOS Safari viewport height */
+  .header-mobile-nav {
+    height: -webkit-fill-available;
+    max-height: 100vh;
+  }
+}
+
+/* Android Chrome specific */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Android specific fixes if needed */
+}
+
+/* ============================================
+   PRINT STYLES - Cross-browser
+   ============================================ */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .header,
+  .header-mobile-nav,
+  .header-mobile-overlay {
+    display: none !important;
+  }
+  
+  .glass,
+  .glass-strong,
+  .glass-light {
+    background: white !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE SUPPORT
+   ============================================ */
+@media (prefers-contrast: high) {
+  .header {
+    border-bottom: 2px solid var(--color-text);
+  }
+  
+  .btn {
+    border: 2px solid currentColor;
+  }
+  
+  .glass,
+  .glass-strong,
+  .glass-light {
+    background: var(--color-bg) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 2px solid var(--color-border-strong);
+  }
+}
+
+/* ============================================
+   DARK MODE CROSS-BROWSER
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* System dark mode preference */
+  /* Note: We're forcing light theme, but this is for future use */
+}
+

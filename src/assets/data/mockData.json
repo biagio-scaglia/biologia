@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mario Rossi",
+      "email": "mario.rossi@example.com",
+      "role": "Admin",
+      "createdAt": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Luigi Verdi",
+      "email": "luigi.verdi@example.com",
+      "role": "User",
+      "createdAt": "2024-01-20T14:15:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Anna Bianchi",
+      "email": "anna.bianchi@example.com",
+      "role": "Editor",
+      "createdAt": "2024-02-01T09:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Paolo Neri",
+      "email": "paolo.neri@example.com",
+      "role": "User",
+      "createdAt": "2024-02-10T16:45:00Z"
+    }
+  ],
+  "stats": {
+    "totalUsers": 150,
+    "activeUsers": 120,
+    "totalRevenue": 125000.50,
+    "growth": 15.5
+  }
+}
+

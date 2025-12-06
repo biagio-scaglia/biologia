@@ -1,0 +1,232 @@
+.mutations {
+  padding: var(--spacing-2xl) 0;
+}
+
+.mutations-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.mutations-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.mutations-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.mutations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.mutations-card {
+  height: 100%;
+}
+
+.mutations-card--target {
+  border: 2px solid var(--color-primary);
+}
+
+.mutations-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.mutations-icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.mutations-mutation-name {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0.25rem;
+}
+
+.mutations-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.mutations-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.mutations-frequency {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.mutations-type {
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.mutations-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.mutations-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.mutations-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.mutations-detail-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mutations-detail-value {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.mutations-therapy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  background: var(--color-success-light);
+  padding: var(--spacing-md);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--color-success);
+}
+
+.mutations-therapy-icon {
+  color: var(--color-success);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.mutations-therapy-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.mutations-therapy-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-success);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mutations-therapy-drugs {
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.mutations-pathway,
+.mutations-somatic {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.mutations-pathway-description,
+.mutations-pathway-consequence,
+.mutations-somatic-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.mutations-pathway-diagram {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: 0.5rem;
+  margin: var(--spacing-md) 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.mutations-pathway-component {
+  padding: var(--spacing-sm) 0;
+}
+
+.mutations-somatic-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.mutations-somatic-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.mutations-somatic-detail-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mutations-somatic-detail-value {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .mutations-title {
+    font-size: 2rem;
+  }
+
+  .mutations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mutations-card-title {
+    flex-wrap: wrap;
+  }
+}
+

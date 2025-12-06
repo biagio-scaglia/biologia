@@ -1,0 +1,2 @@
+export { HeroIntro } from './HeroIntro';
+
