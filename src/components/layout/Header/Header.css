@@ -408,6 +408,13 @@
   .header-mobile-nav {
     display: block;
   }
+  
+  /* Prevent horizontal scroll when menu opens */
+  body:has(.header-mobile-nav.is-open) {
+    overflow-x: hidden;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 /* Already moved above */

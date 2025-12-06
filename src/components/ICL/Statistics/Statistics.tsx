@@ -188,19 +188,14 @@ export const Statistics: React.FC = () => {
                     name="Percentuale di coinvolgimento"
                     radius={[12, 12, 0, 0]}
                     animationBegin={0}
-                    animationDuration={1200}
+                    animationDuration={600}
                     animationEasing="ease-out"
                     strokeWidth={2}
+                    isAnimationActive={true}
                   >
                     {organData.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={`url(#${getGradientId(index)})`} />
                     ))}
-                    <LabelList 
-                      dataKey="value" 
-                      position="top" 
-                      formatter={(value: number) => `${value}%`}
-                      style={{ fill: 'var(--color-text)', fontSize: 12, fontWeight: 600 }}
-                    />
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
@@ -247,7 +242,7 @@ export const Statistics: React.FC = () => {
                       fill="#8884d8"
                       dataKey="value"
                       animationBegin={0}
-                      animationDuration={1200}
+                      animationDuration={600}
                       animationEasing="ease-out"
                       stroke="var(--color-bg)"
                       strokeWidth={2}
