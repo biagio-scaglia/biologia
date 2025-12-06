@@ -516,11 +516,33 @@ textarea::placeholder {
   }
 }
 
-/* Performance optimizations */
+/* Performance optimizations - GPU acceleration */
 .hover-lift,
 .hover-scale,
 .hover-glow {
   will-change: transform, box-shadow;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* GPU acceleration for animations */
+@keyframes fadeIn,
+@keyframes slideUp,
+@keyframes slideDown,
+@keyframes scaleIn {
+  will-change: transform, opacity;
+}
+
+/* Optimize rendering for animated elements */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-down,
+.animate-scale-in {
+  will-change: transform, opacity;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }

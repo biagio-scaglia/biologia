@@ -172,11 +172,13 @@
   position: relative;
   overflow: hidden;
   gap: var(--spacing-1);
-  /* Performance optimization */
+  /* Performance optimization - GPU acceleration */
   will-change: transform, background-color;
   /* Force hardware acceleration */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .header-nav-link::before {

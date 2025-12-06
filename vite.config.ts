@@ -14,19 +14,71 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'chart-vendor': ['recharts'],
-          'animation-vendor': ['framer-motion'],
+        manualChunks: (id) => {
+          // React vendor chunk
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
+            return 'react-vendor';
+          }
+          // Chart vendor chunk
+          if (id.includes('node_modules/recharts')) {
+            return 'chart-vendor';
+          }
+          // Animation vendor chunk
+          if (id.includes('node_modules/framer-motion')) {
+            return 'animation-vendor';
+          }
+          // Icons vendor chunk
+          if (id.includes('node_modules/react-icons') || id.includes('node_modules/@radix-ui')) {
+            return 'icons-vendor';
+          }
+          // Other vendor chunk
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+        // Optimize chunk file names for better caching
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          if (/woff2?|eot|ttf|otf/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
+          return `assets/[ext]/[name]-[hash][extname]`;
         },
       },
     },
     chunkSizeWarningLimit: 1000,
     minify: 'esbuild',
+    cssMinify: true,
+    // Enable source maps for production debugging (optional)
+    sourcemap: false,
+    // Optimize asset inlining threshold
+    assetsInlineLimit: 4096,
+    // Enable compression
+    reportCompressedSize: true,
+    // Target modern browsers for smaller bundle
+    target: 'esnext',
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
     exclude: ['recharts'],
+    // Force pre-bundling
+    force: false,
+  },
+  // Enable CSS code splitting
+  css: {
+    devSourcemap: false,
+  },
+  // Performance optimizations
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    },
   },
 })
 

@@ -5,6 +5,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* GPU acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: scroll-position;
 }
 
 .app-main {

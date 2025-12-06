@@ -48,7 +48,7 @@ export const BiologyBackground: React.FC<BiologyBackgroundProps> = ({
               value: 'transparent',
             },
           },
-          fpsLimit: 120,
+          fpsLimit: 60, // Reduced for better performance
           interactivity: {
             events: {
               onClick: {

@@ -23,6 +23,7 @@ const lazyWithErrorHandling = (importFn: () => Promise<any>, componentName: stri
   });
 };
 
+// Lazy load with prefetch for better performance
 const Home = lazyWithErrorHandling(() => import('@/pages/Home'), 'Home');
 const Cells = lazyWithErrorHandling(() => import('@/pages/Cells'), 'Cells');
 const Symptoms = lazyWithErrorHandling(() => import('@/pages/Symptoms'), 'Symptoms');
@@ -31,6 +32,15 @@ const Treatments = lazyWithErrorHandling(() => import('@/pages/Treatments'), 'Tr
 const Statistics = lazyWithErrorHandling(() => import('@/pages/Statistics'), 'Statistics');
 const Prevention = lazyWithErrorHandling(() => import('@/pages/Prevention'), 'Prevention');
 const Sources = lazyWithErrorHandling(() => import('@/pages/Sources'), 'Sources');
+
+// Prefetch routes on idle for better UX
+if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+  requestIdleCallback(() => {
+    // Prefetch most common routes
+    import('@/pages/Home');
+    import('@/pages/Cells');
+  }, { timeout: 2000 });
+}
 
 export const routes: RouteConfig[] = [
   {
