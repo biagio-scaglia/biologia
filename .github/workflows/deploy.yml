@@ -34,12 +34,16 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Remove CNAME if exists
+      - name: Remove CNAME and ensure no custom domain
         run: |
-          if [ -f dist/CNAME ]; then
-            rm dist/CNAME
-            echo "Removed CNAME file"
+          # Remove CNAME from dist if it exists
+          find dist -name "CNAME" -type f -delete 2>/dev/null || true
+          # Also check public folder
+          if [ -f public/CNAME ]; then
+            rm public/CNAME
+            echo "Removed CNAME from public"
           fi
+          echo "Ensured no CNAME files in build"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
