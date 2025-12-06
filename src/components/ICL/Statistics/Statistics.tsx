@@ -148,7 +148,7 @@ export const Statistics: React.FC = () => {
               <ResponsiveContainer width="100%" height={600} className="statistics-bar-chart">
                 <BarChart 
                   data={organData}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 120 }}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 150 }}
                 >
                   <defs>
                     {organData.map((_, index) => (
@@ -163,12 +163,14 @@ export const Statistics: React.FC = () => {
                     dataKey="name" 
                     angle={-45}
                     textAnchor="end"
-                    height={120}
-                    tick={{ fill: 'var(--color-text)', fontSize: 14, fontWeight: 500 }}
+                    height={150}
+                    tick={{ fill: 'var(--color-text)', fontSize: 12, fontWeight: 500 }}
                     stroke="var(--color-text-muted)"
-                    strokeWidth={2}
+                    strokeWidth={1}
                     interval={0}
-                    tickMargin={10}
+                    tickMargin={8}
+                    dy={10}
+                    dx={-5}
                   />
                   <YAxis 
                     label={{ value: 'Percentuale (%)', angle: -90, position: 'insideLeft', fill: 'var(--color-text)', fontSize: 14, fontWeight: 600 }}

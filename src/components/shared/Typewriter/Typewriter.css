@@ -4,10 +4,14 @@
 .typewriter {
   display: inline-block;
   position: relative;
+  color: inherit;
 }
 
 .typewriter-text {
   display: inline;
+  color: inherit;
+  visibility: visible;
+  opacity: 1;
 }
 
 .typewriter-cursor {

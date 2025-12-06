@@ -681,16 +681,18 @@
 
   /* X-axis labels on mobile - make them more visible */
   .statistics-bar-chart .recharts-xAxis {
-    height: 160px !important;
+    height: 180px !important;
   }
 
   .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick {
-    font-size: 10px !important;
+    font-size: 11px !important;
   }
 
   .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick text {
-    transform: translate(-8px, 15px) !important;
+    transform: translate(-5px, 20px) !important;
     text-anchor: end !important;
+    fill: var(--color-text) !important;
+    font-weight: 500 !important;
   }
 
   /* Ensure labels are visible with proper spacing */
@@ -701,6 +703,19 @@
   .statistics-bar-chart .recharts-surface {
     overflow: visible !important;
   }
+  
+  .statistics-bar-chart .recharts-cartesian-axis {
+    overflow: visible !important;
+  }
+  
+  .statistics-bar-chart .recharts-xAxis {
+    overflow: visible !important;
+  }
+  
+  .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick-value {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
@@ -710,15 +725,17 @@
   }
 
   .statistics-bar-chart .recharts-xAxis {
-    height: 140px !important;
+    height: 160px !important;
   }
 
   .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick {
-    font-size: 11px !important;
+    font-size: 12px !important;
   }
 
   .statistics-bar-chart .recharts-xAxis .recharts-cartesian-axis-tick text {
-    transform: translate(-6px, 12px) !important;
+    transform: translate(-5px, 18px) !important;
+    fill: var(--color-text) !important;
+    font-weight: 500 !important;
   }
 }
 
