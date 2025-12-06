@@ -4,14 +4,42 @@
 .typewriter {
   display: inline-block;
   position: relative;
-  color: inherit;
 }
 
 .typewriter-text {
   display: inline;
-  color: inherit;
   visibility: visible;
   opacity: 1;
+  /* Inherit all text styling from parent */
+  color: inherit;
+  font: inherit;
+}
+
+/* When parent has gradient text, apply it to typewriter */
+h1 .typewriter,
+h2 .typewriter,
+h3 .typewriter,
+.statistics-title .typewriter,
+.treatments-title .typewriter,
+.diagnostics-title .typewriter,
+.hero-intro-title .typewriter {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 .typewriter .typewriter-text,
+h2 .typewriter .typewriter-text,
+h3 .typewriter .typewriter-text,
+.statistics-title .typewriter .typewriter-text,
+.treatments-title .typewriter .typewriter-text,
+.diagnostics-title .typewriter .typewriter-text,
+.hero-intro-title .typewriter .typewriter-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .typewriter-cursor {

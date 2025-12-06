@@ -355,7 +355,8 @@
   box-shadow: var(--glass-shadow);
   z-index: var(--z-modal);
   transform: translateX(100%);
-  transition: transform var(--duration-slow) var(--ease-out-expo);
+  transition: transform var(--duration-slow) var(--ease-out-expo),
+              visibility var(--duration-slow) var(--ease-out-expo);
   overflow-y: auto;
   border-left: 1px solid var(--glass-border);
   /* Performance optimization */
@@ -363,6 +364,8 @@
   /* Force hardware acceleration */
   transform: translateZ(0) translateX(100%);
   -webkit-transform: translateZ(0) translateX(100%);
+  visibility: hidden;
+  opacity: 0;
   
   /* Modern browsers with min() support */
   width: min(85vw, 320px);
@@ -397,6 +400,8 @@
 .header-mobile-nav.is-open {
   transform: translateZ(0) translateX(0);
   -webkit-transform: translateZ(0) translateX(0);
+  visibility: visible;
+  opacity: 1;
 }
 
 @media (max-width: 767px) {
