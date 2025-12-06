@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 
 export interface CardProps {
-  title?: string;
+  title?: string | React.ReactNode;
   subtitle?: string;
   children: React.ReactNode;
   footer?: React.ReactNode;

@@ -21,30 +21,6 @@ export interface AppConfig {
   apiEnabled: boolean;
 }
 
-export interface FormFieldConfig {
-  id: string;
-  type: 'text' | 'email' | 'password' | 'number' | 'textarea' | 'select' | 'checkbox' | 'radio';
-  label: string;
-  placeholder?: string;
-  required?: boolean;
-  validation?: {
-    min?: number;
-    max?: number;
-    pattern?: string;
-    message?: string;
-  };
-  options?: Array<{ value: string; label: string }>;
-  defaultValue?: string | number | boolean;
-}
-
-export interface FormConfig {
-  id: string;
-  title: string;
-  fields: FormFieldConfig[];
-  submitLabel?: string;
-  onSubmit?: (data: Record<string, any>) => void;
-}
-
 export interface User {
   id: string;
   name: string;

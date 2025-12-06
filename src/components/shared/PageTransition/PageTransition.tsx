@@ -45,7 +45,7 @@ export const PageTransition: React.FC<PageTransitionProps> = ({
         // No animation if user prefers reduced motion
         initial: false,
         animate: false,
-        exit: false,
+        exit: undefined,
       }
     : {
         // Smooth fade and slide animation

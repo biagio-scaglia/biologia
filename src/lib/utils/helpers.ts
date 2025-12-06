@@ -89,6 +89,7 @@ export function deepMerge<T extends Record<string, any>>(target: T, ...sources: 
     for (const key in source) {
       if (isObject(source[key])) {
         if (!target[key]) Object.assign(target, { [key]: {} });
+        // @ts-expect-error - Complex type inference for deep merge
         deepMerge(target[key], source[key]);
       } else {
         Object.assign(target, { [key]: source[key] });

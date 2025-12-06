@@ -129,7 +129,7 @@ export const Diagnostics: React.FC = () => {
                   <div className="diagnostics-section">
                     <h4 className="diagnostics-section-title">Test:</h4>
                     <div className="diagnostics-tests">
-                      {method.tests.map((test, idx) => {
+                      {method.tests.map((test: string | { category?: string; tests?: string[]; significance?: string; name?: string; purpose?: string }, idx: number) => {
                         // Gestisce diversi formati di test
                         // Formato 1: test è una stringa (es. endocrine)
                         if (typeof test === 'string') {
@@ -141,12 +141,12 @@ export const Diagnostics: React.FC = () => {
                         }
                         
                         // Formato 2: test ha category e tests array (es. laboratory)
-                        if (test.category && Array.isArray(test.tests)) {
+                        if ('category' in test && test.category && Array.isArray(test.tests)) {
                           return (
                             <div key={idx} className="diagnostics-test">
                               <h5 className="diagnostics-test-category">{test.category}</h5>
                               <ul className="diagnostics-list">
-                                {test.tests.map((testItem, testIdx) => (
+                                {test.tests.map((testItem: string, testIdx: number) => (
                                   <li key={testIdx} className="diagnostics-item">
                                     {testItem}
                                   </li>
@@ -162,7 +162,7 @@ export const Diagnostics: React.FC = () => {
                         }
                         
                         // Formato 3: test ha name, purpose, significance (es. genetic)
-                        if (test.name) {
+                        if ('name' in test && test.name) {
                           return (
                             <div key={idx} className="diagnostics-test">
                               <h5 className="diagnostics-test-category">{test.name}</h5>

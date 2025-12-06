@@ -59,6 +59,7 @@ export const BiologyBackground: React.FC<BiologyBackgroundProps> = ({
                 enable: true,
                 mode: 'repulse',
               },
+              // @ts-expect-error - tsparticles type definition issue
               resize: true,
             },
             modes: {
@@ -95,6 +96,7 @@ export const BiologyBackground: React.FC<BiologyBackgroundProps> = ({
             number: {
               density: {
                 enable: true,
+                // @ts-expect-error - tsparticles type definition issue
                 area: 800,
               },
               value: particleCount,
@@ -105,6 +107,7 @@ export const BiologyBackground: React.FC<BiologyBackgroundProps> = ({
               animation: {
                 enable: true,
                 speed: 0.5,
+                // @ts-expect-error - tsparticles type definition issue
                 minimumValue: 0.2,
                 sync: false,
               },
@@ -118,6 +121,7 @@ export const BiologyBackground: React.FC<BiologyBackgroundProps> = ({
               animation: {
                 enable: true,
                 speed: 2,
+                // @ts-expect-error - tsparticles type definition issue
                 minimumValue: 1,
                 sync: false,
               },

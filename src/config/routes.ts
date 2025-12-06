@@ -107,7 +107,7 @@ export const routes: RouteConfig[] = [
   },
 ];
 
-export const routeComponents: Record<string, React.LazyExoticComponent<() => JSX.Element>> = {
+export const routeComponents: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
   Home,
   Cells,
   Symptoms,

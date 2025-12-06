@@ -67,7 +67,6 @@ src/
 │   │   ├── Statistics/
 │   │   └── Prevention/
 │   ├── shared/               # Componenti condivisi
-│   │   ├── FormBuilder/
 │   │   └── Notifications/
 │   └── layout/              # Componenti di layout
 │       ├── Header/

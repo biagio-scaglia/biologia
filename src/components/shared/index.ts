@@ -1,6 +1,3 @@
-export { FormBuilder } from './FormBuilder';
-export type { FormBuilderProps } from './FormBuilder';
-
 export { Notifications } from './Notifications';
 
 export { ErrorBoundary } from './ErrorBoundary';

@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { AppProvider, useApp } from '@/context/AppContext';
+import { AppProvider } from '@/context/AppContext';
 import { Header, Footer } from '@/components/layout';
 import { Notifications, BiologyBackground } from '@/components/shared';
 import { PageTransition } from '@/components/shared/PageTransition';
