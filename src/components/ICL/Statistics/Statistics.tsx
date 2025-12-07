@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui';
 import { Typewriter } from '@/components/shared/Typewriter';
-import { Map } from '@/components/shared';
 import statisticsData from '@/assets/data/lch/statistics.json';
 import './Statistics.css';
 
@@ -287,16 +286,6 @@ export const Statistics: React.FC = () => {
           </Card>
         </motion.div>
 
-        <motion.div
-          className="statistics-card-full"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          <Card title="Distribuzione Geografica" variant="elevated">
-            <Map />
-          </Card>
-        </motion.div>
       </div>
     </section>
   );

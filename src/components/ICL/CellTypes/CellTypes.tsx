@@ -6,6 +6,9 @@ import './CellTypes.css';
 
 export const CellTypes: React.FC = () => {
   const { cells, pathology } = cellsData;
+  
+  // Filtra solo CD1a e CD207
+  const proteinCells = cells.filter(cell => cell.id === 'cd1a' || cell.id === 'cd207');
 
   return (
     <section className="cell-types">
@@ -15,7 +18,7 @@ export const CellTypes: React.FC = () => {
       </div>
 
       <div className="cell-types-grid">
-        {cells.map((cell, index) => (
+        {proteinCells.map((cell, index) => (
           <motion.div
             key={cell.id}
             initial={{ opacity: 0, y: 20 }}

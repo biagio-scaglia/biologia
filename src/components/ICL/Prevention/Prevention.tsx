@@ -130,7 +130,7 @@ export const Prevention: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Card title="Consapevolezza e Educazione" variant="elevated">
+          <Card title="Consapevolezza ed Educazione" variant="elevated">
             <div className="prevention-awareness">
               <p className="prevention-awareness-description">{awareness.importance}</p>
               <div className="prevention-awareness-education">

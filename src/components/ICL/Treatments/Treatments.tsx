@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import * as RadixIcons from '@radix-ui/react-icons';
 import { Card } from '@/components/ui';
 import { Typewriter } from '@/components/shared/Typewriter';
@@ -15,6 +15,43 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   vemurafenib: RadixIcons.MixerHorizontalIcon,
   trametinib: RadixIcons.MixerHorizontalIcon,
   'stem-cell': RadixIcons.CubeIcon,
+};
+
+const ExpandableSection: React.FC<{ title: string; children: React.ReactNode; defaultOpen?: boolean }> = ({ 
+  title, 
+  children, 
+  defaultOpen = false 
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="treatments-expandable-section">
+      <button
+        className="treatments-expandable-header"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        <h4 className="treatments-section-title">{title}</h4>
+        <RadixIcons.ChevronDownIcon 
+          className={`treatments-expandable-icon ${isOpen ? 'is-open' : ''}`}
+          aria-hidden="true"
+        />
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="treatments-expandable-content"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export const Treatments: React.FC = () => {
@@ -65,109 +102,100 @@ export const Treatments: React.FC = () => {
 
                 <p className="treatments-description">{treatment.description}</p>
 
-                {treatment.procedures && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Procedure:</h4>
-                    <ul className="treatments-list">
-                      {treatment.procedures.map((procedure, idx) => (
-                        <li key={idx} className="treatments-item">
-                          {procedure}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {treatment.regimens && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Regimi:</h4>
-                    <div className="treatments-regimens">
-                      {treatment.regimens.map((regimen, idx) => (
-                        <div key={idx} className="treatments-regimen">
-                          <h5 className="treatments-regimen-name">{regimen.name}</h5>
-                          <p className="treatments-regimen-description">{regimen.description}</p>
-                          {regimen.duration && (
-                            <p className="treatments-regimen-duration">
-                              <strong>Durata:</strong> {regimen.duration}
-                            </p>
-                          )}
-                          {regimen.administration && (
-                            <p className="treatments-regimen-admin">
-                              <strong>Somministrazione:</strong> {regimen.administration}
-                            </p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {treatment.administration && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Somministrazione:</h4>
-                    <ul className="treatments-list">
-                      {Array.isArray(treatment.administration) ? (
-                        treatment.administration.map((admin, idx) => (
+                <div className="treatments-expandable-sections">
+                  {treatment.procedures && (
+                    <ExpandableSection title="Procedure">
+                      <ul className="treatments-list">
+                        {treatment.procedures.map((procedure, idx) => (
                           <li key={idx} className="treatments-item">
-                            {admin}
+                            {procedure}
                           </li>
-                        ))
-                      ) : (
-                        <li className="treatments-item">{treatment.administration}</li>
-                      )}
-                    </ul>
-                  </div>
-                )}
+                        ))}
+                      </ul>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.dose && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Dose:</h4>
-                    <p className="treatments-dose">{treatment.dose}</p>
-                  </div>
-                )}
+                  {treatment.regimens && (
+                    <ExpandableSection title="Regimi">
+                      <div className="treatments-regimens">
+                        {treatment.regimens.map((regimen, idx) => (
+                          <div key={idx} className="treatments-regimen">
+                            <h5 className="treatments-regimen-name">{regimen.name}</h5>
+                            <p className="treatments-regimen-description">{regimen.description}</p>
+                            {regimen.duration && (
+                              <p className="treatments-regimen-duration">
+                                <strong>Durata:</strong> {regimen.duration}
+                              </p>
+                            )}
+                            {regimen.administration && (
+                              <p className="treatments-regimen-admin">
+                                <strong>Somministrazione:</strong> {regimen.administration}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.mechanism && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Meccanismo:</h4>
-                    <p className="treatments-mechanism">{treatment.mechanism}</p>
-                  </div>
-                )}
+                  {treatment.administration && (
+                    <ExpandableSection title="Somministrazione">
+                      <ul className="treatments-list">
+                        {Array.isArray(treatment.administration) ? (
+                          treatment.administration.map((admin, idx) => (
+                            <li key={idx} className="treatments-item">
+                              {admin}
+                            </li>
+                          ))
+                        ) : (
+                          <li className="treatments-item">{treatment.administration}</li>
+                        )}
+                      </ul>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.efficacy && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Efficacia:</h4>
-                    <p className="treatments-efficacy">{treatment.efficacy}</p>
-                  </div>
-                )}
+                  {treatment.dose && (
+                    <ExpandableSection title="Dose">
+                      <p className="treatments-dose">{treatment.dose}</p>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.sideEffects && (
-                  <div className="treatments-section">
-                    <h4 className="treatments-section-title">Effetti collaterali:</h4>
-                    <ul className="treatments-list">
-                      {treatment.sideEffects.map((effect, idx) => (
-                        <li key={idx} className="treatments-item treatments-item--side-effect">
-                          {effect}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                  {treatment.mechanism && (
+                    <ExpandableSection title="Meccanismo">
+                      <p className="treatments-mechanism">{treatment.mechanism}</p>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.monitoring && (
-                  <div className="treatments-monitoring">
-                    <p className="treatments-monitoring-text">
-                      <strong>Monitoraggio:</strong> {treatment.monitoring}
-                    </p>
-                  </div>
-                )}
+                  {treatment.efficacy && (
+                    <ExpandableSection title="Efficacia">
+                      <p className="treatments-efficacy">{treatment.efficacy}</p>
+                    </ExpandableSection>
+                  )}
 
-                {treatment.outcomes && (
-                  <div className="treatments-outcomes">
-                    <p className="treatments-outcomes-text">
-                      <strong>Risultati:</strong> {treatment.outcomes}
-                    </p>
-                  </div>
-                )}
+                  {treatment.sideEffects && (
+                    <ExpandableSection title="Effetti collaterali">
+                      <ul className="treatments-list">
+                        {treatment.sideEffects.map((effect, idx) => (
+                          <li key={idx} className="treatments-item treatments-item--side-effect">
+                            {effect}
+                          </li>
+                        ))}
+                      </ul>
+                    </ExpandableSection>
+                  )}
+
+                  {treatment.monitoring && (
+                    <ExpandableSection title="Monitoraggio">
+                      <p className="treatments-monitoring-text">{treatment.monitoring}</p>
+                    </ExpandableSection>
+                  )}
+
+                  {treatment.outcomes && (
+                    <ExpandableSection title="Risultati">
+                      <p className="treatments-outcomes-text">{treatment.outcomes}</p>
+                    </ExpandableSection>
+                  )}
+                </div>
               </div>
             </Card>
           </motion.div>

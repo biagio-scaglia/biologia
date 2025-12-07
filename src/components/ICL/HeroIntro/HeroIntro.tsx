@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Container } from '@/components/layout';
 import { Typewriter } from '@/components/shared/Typewriter';
 import introductionData from '@/assets/data/lch/introduction.json';
 import './HeroIntro.css';
@@ -48,7 +47,7 @@ export const HeroIntro: React.FC = () => {
 
   return (
     <section className="hero-intro" aria-labelledby="hero-title">
-      <Container>
+      <div className="hero-intro-container">
         <motion.div
           className="hero-intro-content"
           {...getAnimationProps()}
@@ -124,7 +123,7 @@ export const HeroIntro: React.FC = () => {
             </motion.section>
           </div>
         </motion.div>
-      </Container>
+      </div>
     </section>
   );
 };

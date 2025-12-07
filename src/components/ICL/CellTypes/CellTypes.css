@@ -20,9 +20,10 @@
 
 .cell-types-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
   margin-bottom: var(--spacing-2xl);
+  max-width: 100%;
 }
 
 .cell-types-card {
@@ -93,6 +94,7 @@
 
   .cell-types-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-4);
   }
 }
 
