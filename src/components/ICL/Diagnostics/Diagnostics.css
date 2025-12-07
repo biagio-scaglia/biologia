@@ -243,6 +243,78 @@
   margin: 0;
 }
 
+/* ============================================
+   STRUMENTI DI DIAGNOSTICA
+   ============================================ */
+.diagnostics-tools {
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-8);
+  border-top: 2px solid var(--color-border);
+}
+
+.diagnostics-tools-header {
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.diagnostics-tools-title {
+  font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-3xl));
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.diagnostics-tools-description {
+  font-size: clamp(var(--font-size-base), 2.5vw, var(--font-size-lg));
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.diagnostics-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.diagnostics-tool-card {
+  height: 100%;
+}
+
+.diagnostics-tool-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.diagnostics-tool-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.diagnostics-tool-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.diagnostics-tool-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .diagnostics-title {
     font-size: 2rem;
@@ -254,6 +326,14 @@
 
   .diagnostics-criteria-content {
     grid-template-columns: 1fr;
+  }
+
+  .diagnostics-tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnostics-tools-title {
+    font-size: 1.75rem;
   }
 }
 

@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export const Diagnostics: React.FC = () => {
-  const { methods, diagnosticCriteria } = diagnosticsData;
+  const { methods, diagnosticCriteria, diagnosticTools } = diagnosticsData;
 
   return (
     <section className="diagnostics">
@@ -229,6 +229,57 @@ export const Diagnostics: React.FC = () => {
           </div>
         </Card>
       </motion.div>
+
+      {diagnosticTools && (
+        <motion.div
+          className="diagnostics-tools"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <div className="diagnostics-tools-header">
+            <h2 className="diagnostics-tools-title">{diagnosticTools.title}</h2>
+            {diagnosticTools.description && (
+              <p className="diagnostics-tools-description">{diagnosticTools.description}</p>
+            )}
+          </div>
+          <div className="diagnostics-tools-grid">
+            {diagnosticTools.tools.map((tool, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+              >
+                <Card
+                  title={tool.name}
+                  subtitle={tool.category}
+                  variant="elevated"
+                  className="diagnostics-tool-card"
+                >
+                  <div className="diagnostics-tool-content">
+                    {tool.description && (
+                      <p className="diagnostics-tool-description">{tool.description}</p>
+                    )}
+                    {tool.applications && (
+                      <div className="diagnostics-tool-section">
+                        <h4 className="diagnostics-tool-section-title">Applicazioni:</h4>
+                        <ul className="diagnostics-list">
+                          {tool.applications.map((application, idx) => (
+                            <li key={idx} className="diagnostics-item">
+                              {application}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 };

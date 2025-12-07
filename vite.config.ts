@@ -9,6 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Map lodash to lodash-es for ES module compatibility
+      'lodash': 'lodash-es',
     },
   },
   build: {
@@ -18,10 +20,6 @@ export default defineConfig({
           // React vendor chunk
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
             return 'react-vendor';
-          }
-          // Chart vendor chunk
-          if (id.includes('node_modules/recharts')) {
-            return 'chart-vendor';
           }
           // Animation vendor chunk
           if (id.includes('node_modules/framer-motion')) {
@@ -65,10 +63,14 @@ export default defineConfig({
     target: 'esnext',
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
-    exclude: ['recharts'],
-    // Force pre-bundling
-    force: false,
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom',
+      'lodash-es',
+    ],
+    // Force pre-bundling to handle CommonJS dependencies
+    force: true,
   },
   // Enable CSS code splitting
   css: {
@@ -76,6 +78,9 @@ export default defineConfig({
   },
   // Performance optimizations
   server: {
+    fs: {
+      strict: true,
+    },
     headers: {
       'Cache-Control': 'public, max-age=31536000',
     },

@@ -4,6 +4,27 @@ import { Card } from '@/components/ui';
 import symptomsData from '@/assets/data/lch/symptoms.json';
 import './AffectedSystems.css';
 
+// Import delle icone SVG
+import skeletonIcon from '@/assets/icons/body/skeleton.svg';
+import tissueIcon from '@/assets/icons/body/tissue.svg';
+import lungsIcon from '@/assets/icons/body/lungs.svg';
+import liverIcon from '@/assets/icons/body/liver.svg';
+import spleenIcon from '@/assets/icons/body/spleen.svg';
+import neurologyIcon from '@/assets/icons/body/neurology.svg';
+import bloodCellsIcon from '@/assets/icons/body/blood_cells.svg';
+
+// Mappatura organi -> icone SVG
+const organIconMap: Record<string, string> = {
+  bone: skeletonIcon,
+  skin: tissueIcon,
+  lung: lungsIcon,
+  liver: liverIcon,
+  spleen: spleenIcon,
+  lymph: tissueIcon,
+  pituitary: neurologyIcon,
+  'bone-marrow': bloodCellsIcon,
+};
+
 export const AffectedSystems: React.FC = () => {
   const { organs, systemicSymptoms } = symptomsData;
 
@@ -25,7 +46,11 @@ export const AffectedSystems: React.FC = () => {
             <Card
               title={
                 <div className="affected-systems-card-title">
-                  <span className="affected-systems-icon">{organ.icon}</span>
+                  <img 
+                    src={organIconMap[organ.id] || '/src/assets/icons/body/tissue.svg'} 
+                    alt={`Icona ${organ.name}`}
+                    className="affected-systems-icon"
+                  />
                   <span>{organ.name}</span>
                 </div>
               }
@@ -75,7 +100,7 @@ export const AffectedSystems: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Card title="Sintomi Sistemici" variant="outlined">
+          <Card title="Sintomi Sistemici" variant="elevated">
             <ul className="affected-systems-systemic-list">
               {systemicSymptoms.map((symptom, index) => (
                 <li key={index} className="affected-systems-systemic-item">

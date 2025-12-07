@@ -138,9 +138,11 @@
    ============================================ */
 .header-nav {
   display: none; /* Hidden on mobile by default */
-  gap: var(--spacing-2);
+  gap: var(--spacing-1);
   flex: 1;
   justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 /* Show navigation on tablet+ */
@@ -153,16 +155,22 @@
 
 @media (min-width: 1024px) {
   .header-nav {
+    gap: var(--spacing-1);
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-nav {
     gap: var(--spacing-2);
   }
 }
 
 .header-nav-link {
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: calc(var(--spacing-1) + var(--spacing-1) / 2) var(--spacing-2);
   text-decoration: none;
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   border-radius: var(--radius-md);
   transition: all var(--duration-base) var(--ease-smooth);
   min-height: var(--touch-target-min);
@@ -179,6 +187,7 @@
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  white-space: nowrap;
 }
 
 .header-nav-link::before {
@@ -293,9 +302,9 @@
    NAVIGATION ICONS
    ============================================ */
 .header-nav-icon {
-  width: 18px;
-  height: 18px;
-  margin-right: var(--spacing-2);
+  width: 16px;
+  height: 16px;
+  margin-right: var(--spacing-1);
   color: currentColor;
   transition: transform var(--duration-base) var(--ease-smooth);
   flex-shrink: 0;
@@ -308,6 +317,10 @@
 .header-nav-link.active .header-nav-icon {
   color: var(--color-primary);
 }
+
+/* ============================================
+   CHI SIAMO LINK (uses header-nav-link styles)
+   ============================================ */
 
 /* ============================================
    MOBILE MENU OVERLAY

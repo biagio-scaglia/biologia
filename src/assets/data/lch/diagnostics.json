@@ -149,6 +149,72 @@
       "Mutazioni genetiche caratteristiche (BRAF V600E, MAP2K1)",
       "Manifestazioni cliniche tipiche"
     ]
+  },
+  "diagnosticTools": {
+    "title": "Strumenti di diagnostica",
+    "description": "Gli strumenti e le tecnologie utilizzate nella diagnosi dell'ICL",
+    "tools": [
+      {
+        "name": "Microscopio ottico",
+        "category": "Istologia",
+        "description": "Utilizzato per l'analisi istologica dei campioni bioptici",
+        "applications": [
+          "Identificazione delle caratteristiche morfologiche delle cellule",
+          "Valutazione dell'architettura tissutale",
+          "Analisi delle lesioni"
+        ]
+      },
+      {
+        "name": "Microscopio elettronico",
+        "category": "Ultra-struttura",
+        "description": "Essenziale per l'identificazione dei granuli di Birbeck",
+        "applications": [
+          "Visualizzazione dei granuli di Birbeck caratteristici",
+          "Analisi dell'ultrastruttura cellulare",
+          "Conferma diagnostica"
+        ]
+      },
+      {
+        "name": "Sistema di immunoistochimica",
+        "category": "Marcatori",
+        "description": "Per l'identificazione dei marcatori CD1a e CD207",
+        "applications": [
+          "Colorazione per CD1a",
+          "Colorazione per CD207 (langerin)",
+          "Colorazione per S100 e altri marcatori"
+        ]
+      },
+      {
+        "name": "Sequenziatore genetico",
+        "category": "Genetica",
+        "description": "Per l'analisi delle mutazioni genetiche",
+        "applications": [
+          "Sequenziamento BRAF V600E",
+          "Sequenziamento MAP2K1",
+          "Pannelli NGS per mutazioni multiple"
+        ]
+      },
+      {
+        "name": "Tomografo computerizzato (TC)",
+        "category": "Imaging",
+        "description": "Per la valutazione delle lesioni ossee e dei tessuti molli",
+        "applications": [
+          "Imaging delle lesioni ossee",
+          "Valutazione dell'estensione della malattia",
+          "Monitoraggio della risposta al trattamento"
+        ]
+      },
+      {
+        "name": "Risonanza magnetica (RM)",
+        "category": "Imaging",
+        "description": "Per la valutazione del sistema nervoso centrale e degli organi interni",
+        "applications": [
+          "Imaging del sistema nervoso centrale",
+          "Valutazione dell'ipofisi",
+          "Analisi del midollo osseo"
+        ]
+      }
+    ]
   }
 }
 

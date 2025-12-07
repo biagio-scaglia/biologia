@@ -3,49 +3,105 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui';
 import { Typewriter } from '@/components/shared/Typewriter';
 import { Map } from '@/components/shared';
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import statisticsData from '@/assets/data/lch/statistics.json';
 import './Statistics.css';
 
 const COLORS = ['#2563eb', '#0ea5e9', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#f87171'];
 
-// Custom Tooltip Component
-const CustomTooltip = ({ active, payload, label }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="statistics-tooltip">
-        <div className="statistics-tooltip-label">{label}</div>
-        <div className="statistics-tooltip-value">
-          {payload[0].value}%
-        </div>
-        {payload[0].payload?.description && (
-          <div className="statistics-tooltip-description">
-            {payload[0].payload.description}
+// Simple Bar Chart Component
+const SimpleBarChart: React.FC<{ data: Array<{ name: string; value: number; description?: string }> }> = ({ data }) => {
+  const maxValue = Math.max(...data.map(d => d.value));
+  
+  return (
+    <div className="simple-bar-chart">
+      {data.map((item, index) => (
+        <div key={index} className="simple-bar-item">
+          <div className="simple-bar-label">{item.name}</div>
+          <div className="simple-bar-container">
+            <div 
+              className="simple-bar-fill"
+              style={{
+                width: `${(item.value / maxValue) * 100}%`,
+                backgroundColor: COLORS[index % COLORS.length],
+              }}
+            >
+              <span className="simple-bar-value">{item.value}%</span>
+            </div>
           </div>
-        )}
-      </div>
-    );
-  }
-  return null;
-};
-
-// Custom Pie Tooltip
-const CustomPieTooltip = ({ active, payload }: any) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="statistics-tooltip">
-        <div className="statistics-tooltip-label">{payload[0].name}</div>
-        <div className="statistics-tooltip-value">
-          {payload[0].value}%
         </div>
-      </div>
-    );
-  }
-  return null;
+      ))}
+    </div>
+  );
 };
 
-// Gradient definitions for bars
-const getGradientId = (index: number) => `gradient-${index}`;
+// Simple Pie Chart Component
+const SimplePieChart: React.FC<{ data: Array<{ name: string; value: number; color: string }> }> = ({ data }) => {
+  const total = data.reduce((sum, item) => sum + item.value, 0);
+  let currentAngle = 0;
+  
+  const segments = data.map((item, index) => {
+    const percentage = (item.value / total) * 100;
+    const angle = (item.value / total) * 360;
+    const startAngle = currentAngle;
+    currentAngle += angle;
+    
+    return {
+      ...item,
+      percentage,
+      startAngle,
+      angle,
+    };
+  });
+
+  return (
+    <div className="simple-pie-chart">
+      <svg viewBox="0 0 300 300" className="simple-pie-svg">
+        <circle cx="150" cy="150" r="120" fill="none" stroke="var(--color-bg)" strokeWidth="4" />
+        {segments.map((segment, index) => {
+          const startAngleRad = (segment.startAngle - 90) * (Math.PI / 180);
+          const endAngleRad = ((segment.startAngle + segment.angle) - 90) * (Math.PI / 180);
+          const largeArcFlag = segment.angle > 180 ? 1 : 0;
+          
+          const x1 = 150 + 120 * Math.cos(startAngleRad);
+          const y1 = 150 + 120 * Math.sin(startAngleRad);
+          const x2 = 150 + 120 * Math.cos(endAngleRad);
+          const y2 = 150 + 120 * Math.sin(endAngleRad);
+          
+          const pathData = [
+            `M 150 150`,
+            `L ${x1} ${y1}`,
+            `A 120 120 0 ${largeArcFlag} 1 ${x2} ${y2}`,
+            `Z`
+          ].join(' ');
+          
+          return (
+            <path
+              key={index}
+              d={pathData}
+              fill={segment.color}
+              stroke="var(--color-bg)"
+              strokeWidth="2"
+              className="simple-pie-segment"
+            />
+          );
+        })}
+        <circle cx="150" cy="150" r="50" fill="var(--color-bg)" />
+      </svg>
+      <div className="simple-pie-legend">
+        {segments.map((segment, index) => (
+          <div key={index} className="simple-pie-legend-item">
+            <span 
+              className="simple-pie-legend-color" 
+              style={{ backgroundColor: segment.color }}
+            />
+            <span className="simple-pie-legend-label">{segment.name}</span>
+            <span className="simple-pie-legend-value">{segment.value}%</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export const Statistics: React.FC = () => {
   const { epidemiology, organInvolvement, prognosis, recurrence } = statisticsData;
@@ -144,61 +200,8 @@ export const Statistics: React.FC = () => {
           transition={{ duration: 0.4, delay: 0.05 }}
         >
           <Card title="Coinvolgimento degli Organi" variant="elevated">
-            <div className="statistics-chart-container statistics-chart-desktop">
-              <ResponsiveContainer width="100%" height={600} className="statistics-bar-chart">
-                <BarChart 
-                  data={organData}
-                  margin={{ top: 20, right: 30, left: 20, bottom: 150 }}
-                >
-                  <defs>
-                    {organData.map((_, index) => (
-                      <linearGradient key={getGradientId(index)} id={getGradientId(index)} x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor={COLORS[index % COLORS.length]} stopOpacity={1} />
-                        <stop offset="100%" stopColor={COLORS[index % COLORS.length]} stopOpacity={0.6} />
-                      </linearGradient>
-                    ))}
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" opacity={0.3} />
-                  <XAxis 
-                    dataKey="name" 
-                    angle={-45}
-                    textAnchor="end"
-                    height={150}
-                    tick={{ fill: 'var(--color-text)', fontSize: 12, fontWeight: 500 }}
-                    stroke="var(--color-text-muted)"
-                    strokeWidth={1}
-                    interval={0}
-                    tickMargin={8}
-                    dy={10}
-                    dx={-5}
-                  />
-                  <YAxis 
-                    label={{ value: 'Percentuale (%)', angle: -90, position: 'insideLeft', fill: 'var(--color-text)', fontSize: 14, fontWeight: 600 }}
-                    tick={{ fill: 'var(--color-text)', fontSize: 14, fontWeight: 500 }}
-                    stroke="var(--color-text-muted)"
-                    strokeWidth={2}
-                  />
-                  <Tooltip content={<CustomTooltip />} />
-                  <Legend 
-                    wrapperStyle={{ paddingTop: '20px' }}
-                    iconType="rect"
-                  />
-                  <Bar 
-                    dataKey="value" 
-                    name="Percentuale di coinvolgimento"
-                    radius={[12, 12, 0, 0]}
-                    animationBegin={0}
-                    animationDuration={400}
-                    animationEasing="ease-out"
-                    strokeWidth={2}
-                    isAnimationActive={true}
-                  >
-                    {organData.map((_, index) => (
-                      <Cell key={`cell-${index}`} fill={`url(#${getGradientId(index)})`} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="statistics-chart-container">
+              <SimpleBarChart data={organData} />
             </div>
             <div className="statistics-organ-details">
               {organData.map((organ, idx) => (
@@ -221,69 +224,7 @@ export const Statistics: React.FC = () => {
           <Card title="Prognosi" variant="elevated">
             <div className="statistics-prognosis">
               <div className="statistics-prognosis-chart">
-                <ResponsiveContainer width="100%" height={380} className="statistics-pie-chart">
-                  <PieChart>
-                    <defs>
-                      {prognosisData.map((entry, index) => (
-                        <linearGradient key={`pie-gradient-${index}`} id={`pie-gradient-${index}`} x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor={entry.color} stopOpacity={1} />
-                          <stop offset="100%" stopColor={entry.color} stopOpacity={0.7} />
-                        </linearGradient>
-                      ))}
-                    </defs>
-                    <Pie
-                      data={prognosisData}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={false}
-                      outerRadius={120}
-                      innerRadius={50}
-                      fill="#8884d8"
-                      dataKey="value"
-                      animationBegin={0}
-                      animationDuration={600}
-                      animationEasing="ease-out"
-                      stroke="var(--color-bg)"
-                      strokeWidth={2}
-                      paddingAngle={3}
-                    >
-                      {prognosisData.map((entry, index) => (
-                        <Cell 
-                          key={`cell-${index}`} 
-                          fill={`url(#pie-gradient-${index})`}
-                          style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}
-                        />
-                      ))}
-                    </Pie>
-                    <Tooltip content={<CustomPieTooltip />} />
-                    <Legend 
-                      verticalAlign="bottom"
-                      height={80}
-                      iconType="circle"
-                      iconSize={12}
-                      wrapperStyle={{ 
-                        paddingTop: '24px',
-                        fontSize: '14px',
-                        fontWeight: 500,
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        flexWrap: 'nowrap',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        gap: '16px'
-                      }}
-                      formatter={(value) => <span style={{ color: 'var(--color-text)', fontSize: '14px' }}>{value}</span>}
-                      payload={prognosisData.map((entry, index) => ({
-                        value: entry.name,
-                        type: 'circle',
-                        id: entry.name,
-                        color: entry.color
-                      }))}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
+                <SimplePieChart data={prognosisData} />
               </div>
               <div className="statistics-prognosis-details">
                 <div className="statistics-prognosis-group">
@@ -360,4 +301,3 @@ export const Statistics: React.FC = () => {
     </section>
   );
 };
-

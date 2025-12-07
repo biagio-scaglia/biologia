@@ -28,3 +28,44 @@
     padding: clamp(var(--spacing-8), 6vw, var(--spacing-16)) 0;
   }
 }
+
+/* ============================================
+   CHI SIAMO SECTION
+   ============================================ */
+.home-about-section {
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-8);
+  scroll-margin-top: 100px; /* Offset per lo scroll quando si clicca sul link */
+}
+
+.home-about-card {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+.home-about-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .home-about-text {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+  }
+}
+
+.home-about-text sup {
+  font-size: 0.75em;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  vertical-align: super;
+}

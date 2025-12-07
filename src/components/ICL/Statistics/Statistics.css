@@ -788,3 +788,138 @@
   z-index: 1000;
 }
 
+
+/* Simple Bar Chart Styles */
+.simple-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.simple-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.simple-bar-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.simple-bar-container {
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.simple-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--spacing-sm);
+  transition: width 0.6s ease-out;
+  position: relative;
+}
+
+.simple-bar-value {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Simple Pie Chart Styles */
+.simple-pie-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-6);
+  padding: var(--spacing-md);
+}
+
+.simple-pie-svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.simple-pie-segment {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.simple-pie-segment:hover {
+  opacity: 0.8;
+  transform-origin: 150px 150px;
+  transform: scale(1.05);
+}
+
+.simple-pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+  max-width: 300px;
+}
+
+.simple-pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.9375rem;
+}
+
+.simple-pie-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.simple-pie-legend-label {
+  flex: 1;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.simple-pie-legend-value {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .simple-bar-chart {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .simple-bar-container {
+    height: 32px;
+  }
+
+  .simple-bar-value {
+    font-size: 0.75rem;
+  }
+
+  .simple-pie-svg {
+    max-width: 250px;
+  }
+
+  .simple-pie-legend {
+    max-width: 250px;
+  }
+}
+

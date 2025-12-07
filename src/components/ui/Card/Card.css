@@ -16,8 +16,7 @@
 }
 
 .card--outlined {
-  border: 2px solid;
-  border-image: var(--gradient-border) 1;
+  border: none;
   box-shadow: var(--shadow-xs);
 }
 

@@ -83,6 +83,23 @@ export const Header: React.FC = () => {
               </Link>
             );
           })}
+          {/* Chi Siamo Link */}
+          <Link
+            to="/#chi-siamo"
+            className="header-nav-link header-about-link"
+            onClick={() => {
+              if (location.pathname === '/') {
+                const element = document.getElementById('chi-siamo');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+              setMenuOpen(false);
+            }}
+          >
+            <RadixIcons.PersonIcon className="header-nav-icon" aria-hidden="true" />
+            <span>Chi siamo</span>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -137,6 +154,25 @@ export const Header: React.FC = () => {
               </Link>
             );
           })}
+          <Link
+            to="/#chi-siamo"
+            className="header-mobile-nav-link"
+            style={{ '--delay': `${navLinks.length * 50}ms` } as React.CSSProperties}
+            onClick={() => {
+              setMenuOpen(false);
+              if (location.pathname === '/') {
+                setTimeout(() => {
+                  const element = document.getElementById('chi-siamo');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 300);
+              }
+            }}
+          >
+            <RadixIcons.PersonIcon className="header-mobile-nav-icon" aria-hidden="true" />
+            <span>Chi siamo</span>
+          </Link>
         </div>
       </nav>
     </header>
