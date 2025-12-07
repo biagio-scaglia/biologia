@@ -1,1 +1,0 @@
-import{j as r}from"./index-CVpeuB_E.js";import{C as o}from"./Container-B0RDl9gH.js";import{H as s}from"./Prevention-BW7QOppd.js";const a=()=>r.jsx("div",{className:"home",children:r.jsx(o,{children:r.jsx(s,{})})});export{a as Home,a as default};
